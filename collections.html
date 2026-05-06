@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collections - LUMINA Cosmetics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">LUMINA</div>
+    <ul class="nav-links">
+      <li><a href="projet.html">Shop</a></li>
+      <li><a href="collections.html">Collections</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+  </nav>
+
+  <!-- Collections Section -->
+  <section class="collections-section">
+    <h1>Our Collections</h1>
+    <p>Click a collection to view its products. Each set is on SALE!</p>
+
+    <div class="collection-grid">
+
+      <!-- Summer Glow -->
+      <div class="collection-card" onclick="toggleCollection('summer')">
+        <img src="images/SummerGlow.jpg" alt="Summer Glow" class="collection-image">
+        <h2>Summer Glow</h2>
+        <p>Highlighter, Sunscreen, Lipgloss</p>
+        <p class="sale-price">SALE: $55.00 (instead of $68.00)</p>
+        <button class="buy-collection" onclick="event.stopPropagation(); addCollectionToCart('Summer Glow',['Highlighter','Sunscreen','Lipgloss'],55)">Buy Collection</button>
+        <div id="summer" class="collection-products hidden">
+          <ul>
+            <li>Highlighter <button onclick="addToCart('Highlighter',22)">Add</button></li>
+            <li>Sunscreen <button onclick="addToCart('Sunscreen',28)">Add</button></li>
+            <li>Lipgloss <button onclick="addToCart('Lipgloss',18)">Add</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Luxury Essentials -->
+      <div class="collection-card" onclick="toggleCollection('luxury')">
+        <img src="images/luxury.jpg" alt="Luxury Essentials" class="collection-image">
+        <h2>Luxury Essentials</h2>
+        <p>Perfume, Mascara, Lipstick</p>
+        <p class="sale-price">SALE: $75.00 (instead of $89.00)</p>
+        <button class="buy-collection" onclick="event.stopPropagation(); addCollectionToCart('Luxury Essentials',['Perfume','Mascara','Lipstick'],75)">Buy Collection</button>
+        <div id="luxury" class="collection-products hidden">
+          <ul>
+            <li>Perfume <button onclick="addToCart('Perfume',45)">Add</button></li>
+            <li>Mascara <button onclick="addToCart('Mascara',20)">Add</button></li>
+            <li>Lipstick <button onclick="addToCart('Lipstick',24)">Add</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Daily Basics -->
+      <div class="collection-card" onclick="toggleCollection('daily')">
+        <img src="images/daily.jpg" alt="Daily Basics" class="collection-image">
+        <h2>Daily Basics</h2>
+        <p>Eyebrow Definer, Eyeliner, Body Oil</p>
+        <p class="sale-price">SALE: $55.00 (instead of $60.00)</p>
+        <button class="buy-collection" onclick="event.stopPropagation(); addCollectionToCart('Daily Basics',['Eyebrow Definer','Eyeliner','Body Oil'],55)">Buy Collection</button>
+        <div id="daily" class="collection-products hidden">
+          <ul>
+            <li>Eyebrow Definer <button onclick="addToCart('Eyebrow Definer',19)">Add</button></li>
+            <li>Eyeliner <button onclick="addToCart('Eyeliner',15)">Add</button></li>
+            <li>Body Oil <button onclick="addToCart('Body Oil',26)">Add</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Night Glam -->
+      <div class="collection-card" onclick="toggleCollection('night')">
+        <img src="images/glam.jpg" alt="Night Glam" class="collection-image">
+        <h2>Night Glam</h2>
+        <p>Eyeshadow Palette, Eyeliner, Lipstick</p>
+        <p class="sale-price">SALE: $60.00 (instead of $69.00)</p>
+        <button class="buy-collection" onclick="event.stopPropagation(); addCollectionToCart('Night Glam',['Eyeshadow Palette','Eyeliner','Lipstick'],60)">Buy Collection</button>
+        <div id="night" class="collection-products hidden">
+          <ul>
+            <li>Eyeshadow Palette <button onclick="addToCart('Eyeshadow Palette',30)">Add</button></li>
+            <li>Eyeliner <button onclick="addToCart('Eyeliner',15)">Add</button></li>
+            <li>Lipstick <button onclick="addToCart('Lipstick',24)">Add</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Natural Glow -->
+      <div class="collection-card" onclick="toggleCollection('natural')">
+        <img src="images/natural.jpg" alt="Natural Glow" class="collection-image">
+        <h2>Natural Glow</h2>
+        <p>Body Oil, Sunscreen, Highlighter</p>
+        <p class="sale-price">SALE: $65.00 (instead of $76.00)</p>
+        <button class="buy-collection" onclick="event.stopPropagation(); addCollectionToCart('Natural Glow',['Body Oil','Sunscreen','Highlighter'],65)">Buy Collection</button>
+        <div id="natural" class="collection-products hidden">
+          <ul>
+            <li>Body Oil <button onclick="addToCart('Body Oil',26)">Add</button></li>
+            <li>Sunscreen <button onclick="addToCart('Sunscreen',28)">Add</button></li>
+            <li>Highlighter <button onclick="addToCart('Highlighter',22)">Add</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bold Beauty -->
+      <div class="collection-card" onclick="toggleCollection('bold')">
+        <img src="images/bold.jpg" alt="Bold Beauty" class="collection-image">
+        <h2>Bold Beauty</h2>
+        <p>Mascara, Eyeliner, Lipgloss</p>
+        <p class="sale-price">SALE: $45.00 (instead of $53.00)</p>
+        <button class="buy-collection" onclick="event.stopPropagation(); addCollectionToCart('Bold Beauty',['Mascara','Eyeliner','Lipgloss'],45)">Buy Collection</button>
+        <div id="bold" class="collection-products hidden">
+          <ul>
+            <li>Mascara <button onclick="addToCart('Mascara',20)">Add</button></li>
+            <li>Eyeliner <button onclick="addToCart('Eyeliner',15)">Add</button></li>
+            <li>Lipgloss <button onclick="addToCart('Lipgloss',18)">Add</button></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    function toggleCollection(id) {
+      const element = document.getElementById(id);
+      element.classList.toggle("hidden");
+    }
+
+    function addToCart(productName, price) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let existingProduct = cart.find(item => item.name === productName);
+
+      if (existingProduct) {
+        existingProduct.quantity += 1;
+      } else {
+        cart.push({ name: productName, price: price, quantity: 1 });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(productName + " added to cart!");
+    }
+
+    function addCollectionToCart(collectionName, products, salePrice) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name: collectionName + " (Set)", price: salePrice, quantity: 1 });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(collectionName + " Collection added to cart at SALE price!");
+    }
+  </script>
+
+</body>
+</html>
+

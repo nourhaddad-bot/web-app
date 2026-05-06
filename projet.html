@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMINA Cosmetics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">LUMINA</div>
+    <ul class="nav-links">
+      <li><a href="projet.html">Shop</a></li>
+      <li><a href="collections.html">Collections</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>ELEVATE YOUR GLOW.</h1>
+    <p>DISCOVER OUR PREMIUM COLLECTION.</p>
+  </header>
+
+  <!-- Products Section -->
+  <section class="products-section">
+    <h2>THE ESSENTIALS</h2>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="images/lipstick.jpg" alt="Lipstick" class="product-image">
+        <h3>Lipstick</h3>
+        <p>$24.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/lipgloss.jpg" alt="Lipgloss" class="product-image">
+        <h3>Lipgloss</h3>
+        <p>$18.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/highlighter.jpg" alt="Highlighter" class="product-image">
+        <h3>Highlighter</h3>
+        <p>$22.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/mascara.jpg" alt="Mascara" class="product-image">
+        <h3>Mascara</h3>
+        <p>$20.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/eye.jpg" alt="Eyeshadow Palette" class="product-image">
+        <h3>Eyeshadow Palette</h3>
+        <p>$30.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/eyeliner.jpg" alt="Eyeliner" class="product-image">
+        <h3>Eyeliner</h3>
+        <p>$15.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/bodyoil.jpg" alt="Body Oil" class="product-image">
+        <h3>Body Oil</h3>
+        <p>$26.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/sunscreen.jpg" alt="Sunscreen" class="product-image">
+        <h3>Sunscreen</h3>
+        <p>$28.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/eyebrow.jpg" alt="Eyebrow Definer" class="product-image">
+        <h3>Eyebrow Definer</h3>
+        <p>$15.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/signaturee.jpg" alt="Signature Perfume" class="product-image">
+        <h3>Signature Perfume</h3>
+        <p>$50.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/concealer.jpg" alt="Concealer" class="product-image">
+        <h3>Concealer</h3>
+        <p>$20.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div> 
+      
+      <div class="product-card">
+        <img src="images/foundation.jpg" alt="Foundation" class="product-image">
+        <h3>Foundation</h3>
+        <p>$35.00</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>    
+
+    </div>
+  </section>
+
+  <!-- Cart Script -->
+  <script>
+    function addToCart(productName, price) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let existingProduct = cart.find(item => item.name === productName);
+
+      if (existingProduct) {
+        existingProduct.quantity += 1;
+      } else {
+        cart.push({ name: productName, price: price, quantity: 1 });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(productName + " added to cart!");
+    }
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", function() {
+        let productName = this.parentElement.querySelector("h3").innerText;
+        let price = parseFloat(this.parentElement.querySelector("p").innerText.replace("$", ""));
+        addToCart(productName, price);
+      });
+    });
+  </script>
+
+</body>
+</html>
